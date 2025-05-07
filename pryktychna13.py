@@ -12,6 +12,7 @@ bound = 5
 c2s = 30
 white = (255, 255, 255)
 black = (0, 0, 0)
+green = (0, 255, 0)
 
 radius = 10
 x, y = WIDTH // 2, HEIGHT // 2
@@ -20,7 +21,7 @@ vx, vy = func(-5, 5), func(-5, -2)
 border_l = bound + radius
 border_r = WIDTH - bound - radius
 border_u = bound + radius
-border_d = HEIGHT - bound - radius  # лише для перевірки завершення гри
+border_d = HEIGHT - bound - radius
 
 height = 10
 width = 80
@@ -35,11 +36,11 @@ font = pygame.font.SysFont(None, 40)
 
 def drawWindow():
     win.fill(black)
-    pygame.draw.rect(win, white, (0, 0, WIDTH, bound))  # верхня межа
-    pygame.draw.rect(win, white, (0, 0, bound, HEIGHT))  # ліва межа
-    pygame.draw.rect(win, white, (WIDTH - bound, 0, bound, HEIGHT))  # права межа
-    pygame.draw.rect(win, white, (xp, yp, width, height))  # майданчик
-    pygame.draw.circle(win, white, (int(x), int(y)), radius)  # м’яч
+    pygame.draw.rect(win, white, (0, 0, WIDTH, bound))
+    pygame.draw.rect(win, white, (0, 0, bound, HEIGHT))
+    pygame.draw.rect(win, white, (WIDTH - bound, 0, bound, HEIGHT))
+    pygame.draw.rect(win, white, (xp, yp, width, height))
+    pygame.draw.circle(win, green, (int(x), int(y)), radius)
     pygame.display.update()
 
 
